@@ -1,0 +1,23 @@
+.list {
+  padding: 30px;
+}
+
+.list.green {
+  background-color: var(--notification-message-green);
+}
+
+.list.red {
+  background-color: var(--notification-message-red);
+}
+
+.item {
+  margin-bottom: 10px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.value {
+  font-weight: 700;
+}

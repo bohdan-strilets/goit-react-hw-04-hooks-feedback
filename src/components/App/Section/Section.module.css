@@ -1,0 +1,12 @@
+.section {
+  margin-bottom: 50px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.title {
+  font-size: 30px;
+  margin-bottom: 30px;
+}

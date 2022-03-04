@@ -1,0 +1,17 @@
+.item {
+  margin-bottom: 15px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.text {
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.value {
+  color: #008000;
+}
