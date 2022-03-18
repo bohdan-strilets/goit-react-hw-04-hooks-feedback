@@ -46,7 +46,3 @@
 .button:focus {
   background-color: var(--second-bg-color);
 }
-
-.text {
-  margin-right: 10px;
-}

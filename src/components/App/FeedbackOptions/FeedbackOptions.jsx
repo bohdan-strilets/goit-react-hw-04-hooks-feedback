@@ -1,37 +1,28 @@
 import PropTypes from 'prop-types';
-import {
-  BsFillEmojiWinkFill,
-  BsFillEmojiNeutralFill,
-  BsFillEmojiAngryFill,
-} from 'react-icons/bs';
 import css from './FeedbackOptions.module.css';
 
-function FeedbackOptions({ stateObject, handleClickButton }) {
+function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <ul className={css.list}>
-      {stateObject().map(({ name }, index) => {
-        return (
-          <li className={css.item} key={index}>
-            <button
-              className={css.button}
-              type="button"
-              onClick={handleClickButton}
-            >
-              <span className={css.text}>{name}</span>
-              {name === 'good' && <BsFillEmojiWinkFill />}
-              {name === 'neutral' && <BsFillEmojiNeutralFill />}
-              {name === 'bad' && <BsFillEmojiAngryFill />}
-            </button>
-          </li>
-        );
-      })}
+      {options.map(option => (
+        <li className={css.item} key={option}>
+          <button
+            className={css.button}
+            type="button"
+            name={option}
+            onClick={onLeaveFeedback}
+          >
+            {option}
+          </button>
+        </li>
+      ))}
     </ul>
   );
 }
 
 FeedbackOptions.prototype = {
-  stateObject: PropTypes.func.isRequired,
-  handleClickButton: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
 };
 
 export default FeedbackOptions;
