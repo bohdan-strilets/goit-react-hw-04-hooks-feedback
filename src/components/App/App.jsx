@@ -13,16 +13,22 @@ function App() {
   const handleClickButton = e => {
     const option = e.target.name;
 
-    if (option === 'good') {
-      setGood(prevState => prevState + 1);
-    }
+    switch (option) {
+      case 'good':
+        setGood(prevState => prevState + 1);
+        break;
 
-    if (option === 'neutral') {
-      setNeutral(prevState => prevState + 1);
-    }
+      case 'neutral':
+        setNeutral(prevState => prevState + 1);
+        break;
 
-    if (option === 'bad') {
-      setBad(prevState => prevState + 1);
+      case 'bad':
+        setBad(prevState => prevState + 1);
+        break;
+
+      default:
+        console.log(`No option called ${option}`);
+        break;
     }
   };
 
